@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { validate, ValidationError } from "express-validation";
 import { authController } from "../controllers/index.js";
 import { customerSigninSchema, customerRegistrationSchema,} from "../validations/index.js";
 import { validateData } from "../middlewares/validation.middleware.js";

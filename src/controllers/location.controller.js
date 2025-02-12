@@ -90,3 +90,20 @@ export const locationController = {
     }
   },
 };
+
+
+/* async create(req,res,next){
+const validateData=createLocationSchema.parse(req.body)
+const location=new Location(validatedata)
+
+}
+
+
+
+
+
+
+
+
+
+*/

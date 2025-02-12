@@ -6,8 +6,8 @@ const transporter = createTransport({
 	port: 465,
 	secure: true,
 	auth: {
-		user: process.env.MAIL_USER, // TODO: update your email
-		pass: process.env.MAIL_PASS, // TODO: Update your password
+		user: process.env.MAIL_USER, 
+		pass: process.env.MAIL_PASS,
 	},
 });
 
@@ -33,8 +33,3 @@ export function sendMail(userMail, message) {
 	}
 }
 
-// sendMail("lustrum062@gmail.com");
-// sendMail("aliataev9979@gmail.com");
-// sendMail("abdulhaqsherqoziyev@gmail.com");
-
-// export default transporter;
