@@ -8,6 +8,11 @@ export const authController = {
     try {
       const body = req.body;
       const customer = new Customer(body);
+
+      if (body.password !== body.confirmPassword) {
+        return res.status(400).json("Invalid confirmPassword");
+      }
+
       await customer.save();
 
       const otp = otpGenerator.generate(6, {
@@ -106,30 +111,30 @@ export const authController = {
   async logout(req, res, next) {
     try {
       const token = req.headers.authorization?.split(" ")[1];
-  
+
       if (!token) {
         return res.status(400).json({ message: "Token is required" });
       }
-  
+
       let decodedToken;
       try {
         decodedToken = jwt.verify(token, process.env.JWT_ACCESS_SECRET);
       } catch (error) {
         return res.status(401).json({ message: "Token is invalid or expired" });
       }
-  
+
       const customer = await Customer.findById(decodedToken.sub);
-  
+
       if (!customer) {
         return res.status(404).json({ message: "Customer not found" });
       }
-  
+
       res.status(200).json({ message: "Logout successful" });
     } catch (error) {
       next(error);
     }
   },
-  
+
   generateOtp() {
     return otpGenerator.generate(6, {
       upperCaseAlphabets: false,
@@ -180,6 +185,6 @@ export const authController = {
       });
     } catch (error) {
       res.status(400).send(error.message);
-        }
+    }
   },
 };
