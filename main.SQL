@@ -4,7 +4,7 @@ CREATE DATABASE reservation;
 --CONNECT TO DATABASE
 \c reservation;
 
---CREATE TABLE BY ORDER
+--CREATE TABLES BY ORDER
 CREATE Table "customer" (
   id SERIAL PRIMARY KEY,
   username VARCHAR(50),
