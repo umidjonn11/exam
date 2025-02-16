@@ -13,5 +13,3 @@ authRouter.get("/logout", authController.logout);
 authRouter.post("/verify", authController.verify);
 authRouter.get("/me", authMiddleware, authController.profile);
 authRouter.delete("/delete/:id",authMiddleware,roleGuard("manager"),authController.delete)
-
-

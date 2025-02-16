@@ -16,4 +16,3 @@ locationRoutes.get("/locations/:id", locationController.getById);
 locationRoutes.put("/locations/:id", authMiddleware,roleGuard("admin") ,validateData(updateLocationSchema), locationController.update);
 
 locationRoutes.delete("/locations/:id", authMiddleware,roleGuard("admin","manager"), locationController.delete);
-
