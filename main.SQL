@@ -1,5 +1,5 @@
 
-/*
+
 -- create tableone by one
 CREATE TABLE "books" (
   id SERIAL PRIMARY KEY,
@@ -116,7 +116,7 @@ INSERT INTO "order_items" (order_id, book_id, quantity, unit_price) VALUES
 (2, 2, 1, 12.99), 
 (3, 4, 1, 16.99); 
 
-*/
+/*
 --CREATE TABLES
 CREATE TABLE groups (
     id SERIAL PRIMARY KEY,
@@ -323,3 +323,4 @@ CREATE TABLE workers(
   department_id INT NOT NULL, 
   FOREIGN KEY (department_id) REFERENCES "departments" (id) ON DELETE CASCADE
 );
+*/
